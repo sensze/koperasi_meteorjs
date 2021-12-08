@@ -1,0 +1,88 @@
+<template name="home">
+    <head>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="container">
+
+                <!--Page Heading-->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Koperasi
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard">Dashboard</i>
+                            </li>
+                            <li class="active">Data</li>
+                        </ol>
+                    </div>
+                    <div class ="col-xs-12 col-sm-6 col-lg-5">
+                        <form role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="idbarang" style="color:maroon">Id Barang
+                                    <span style="color:red">*</span>
+                                </label> 
+                                <div class="col-sm-9">
+                                    <input type="text" value="{{idbarang}}" name="idbarang"
+                                    id="idbarang" class="form-control input-sm" placeholder="Id Barang">
+                                </div>                                
+                            </div>
+                            <div class="form-group">
+                                    <label class="control-label col-sm-3" for="nama" style="color:maroon">Nama Barang
+                                        <span style="color:red">*</span>
+                                    </label> 
+                                    <div class="col-sm-9">
+                                        <input type="text" value="{{nama}}" name="nama"
+                                        id="nama" class="form-control input-sm" placeholder="Nama Barang">
+                                    </div>                                
+                            </div>
+                            <div class="form-group">
+                                    <label class="control-label col-sm-3" for="jumlahstok" style="color:maroon">Jumlah Stok
+                                        <span style="color:red">*</span>
+                                    </label> 
+                                    <div class="col-sm-9">
+                                        <input type="text" value="{{jumlahstok}}" name="jumlahstok"
+                                        id="jumlahstok" class="form-control input-sm" placeholder="Jumlah Stok">
+                                    </div>                                
+                            </div>
+                             <div class="form-group" >
+                                 <div class="col-sm-offset-3 col-sm-4">
+                                     <input type="submit" value="Add" id="btnAdd" class="btn btn-success btn-block">
+                                 </div>
+                             </div>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-7" >
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped" >
+                                
+                                    <tr>
+                                        <th class="text-center" style="width:20%;color:rgb(0, 0, 0)">Id Barang</th>
+                                        <th class="text-center" style="width:40%;color:rgb(0, 0, 0)">Nama Barang</th>
+                                        <th class="text-center" style="width:40%;color:rgb(0, 0, 0)">Jumlah Stok</th>
+                                        <th class="text-center" style="width:10%;color:rgb(0, 0, 0)" colspan="2">Tools</th>
+                                    </tr>
+                               
+                                <tbody>
+                                    {{#each getData}}
+                                    <tr>
+                                        <td>{{idbarang}}</td>
+                                        <td>{{nama}}</td>
+                                        <td>{{jumlahstok}}</td>
+                                        <td><a href="/update/{{_id}}" class="badge badge-mine2">Ubah</a><a id="hapus" href="#" class="badge badge-mine">Hapus</a></td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.Container-fluid-->
+        </div>
+         <!--/#page-wrapper-->
+    </div>
+</template>
